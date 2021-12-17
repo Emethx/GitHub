@@ -2,12 +2,18 @@ on:
   rss:
     url: https://www.animenewsnetwork.com/news/rss.xml?ann-edition=fr
 jobs:
-  print:
-    name: Print
+  request:
+    name: Request
     runs-on: ubuntu-latest
     steps:
-      - name: Print Outputs
-        env:
-          title: ${{http://mangafrr.blogspot.com/}}
-          contentSnippet: ${{http://mangafrr.blogspot.com/}}
-          link: ${{http://mangafrr.blogspot.com/}}
+      - name: Make a HTTP Request      
+        uses: actionsflow/axios@main
+        with:
+          url: http://mangafrr.blogspot.com/
+          method: POST
+          body: |
+            {
+              "link":"${{on.rss.outputs.link}}", 
+              "title": "${{on.rss.outputs.title}}",
+              "content":"<<<${{on.rss.outputs.contentSnippet}}>>>"
+            }
