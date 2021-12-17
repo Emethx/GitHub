@@ -9,7 +9,7 @@ jobs:
       - name: Make a HTTP Request      
         uses: actionsflow/axios@main
         with:
-          url: http://mangafrr.blogspot.com/
+          url: https://mangasfrr.blogspot.com/
           method: POST
           body: |
             {
