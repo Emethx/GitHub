@@ -11,7 +11,3 @@ jobs:
           title: ${{http://mangafrr.blogspot.com/}}
           contentSnippet: ${{http://mangafrr.blogspot.com/}}
           link: ${{http://mangafrr.blogspot.com/}}
-        run: |
-          echo title: $title
-          echo contentSnippet: $contentSnippet
-          echo link: $link
