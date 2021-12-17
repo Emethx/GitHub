@@ -10,9 +10,9 @@ jobs:
         uses: actionsflow/axios@main
         with:
           url: https://mangasfrr.blogspot.com/
+          user: ${{secrets.yoyo@gmail.com}}
+          password: ${{secrets.yoyo12345}}
           method: POST
-user: ${{secrets.yoyo@gmail.com}}
-      password: ${{secrets.yoyo12345}}
           body: |
             {
               "link":"${{on.rss.outputs.link}}", 
